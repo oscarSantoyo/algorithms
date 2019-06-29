@@ -1,12 +1,12 @@
-
-
 function addBusinessTime(holiday, time, duration){
     const durationMili = duration * 1000
     let timePoint = time.getTime() + durationMili
+    let temp = timePoint - holiday.start.getTime()
     if(timePoint >= holiday.start.getTime() && timePoint <= holiday.end.getTime()){
-        timePoint = (durationMili > 0 ? holiday.end.getTime() : holiday.start.getTime()) + durationMili
+        timePoint = (durationMili > 0 ? holiday.end.getTime() : holiday.start.getTime()) + (time.getTime() < holiday.start.getTime() ? temp : durationMili)
     }
     const result = new Date(timePoint)
+    console.log(result.toString(), result)
     return result
 }
 
