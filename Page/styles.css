@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-align: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    background-color: #748BA7;
+}
+
+.container > .product {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.product > label {
+    padding-left: 1em;
+    font-size: 2em;
+    color: #051B38;
+
+}
+
+.product > img {
+    width: 150px;
+}
+
+@media only screen and (min-width: 768px){
+    .container {
+        max-width: 1980px;
+        margin: auto;
+    }
+
+    .container > .product {
+        width: 150px;
+        display: block;
+    }
+
+    .product > label {
+        padding: 0;
+        font-size: 1.5em;
+    }
+
+}
